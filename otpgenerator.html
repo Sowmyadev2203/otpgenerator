@@ -8,7 +8,7 @@
         #div1{
             display: grid;
             border: 1px solid black;
-            height: 150px;
+            height: 250px;
             width: 120px;
             padding: 30px;
             background-color: rgb(51, 48, 48);
@@ -24,6 +24,8 @@
         <button id="btn">Generate OTP</button>
         <p>your otp is :</p>    
         <p id="p1" style="background-color: dimgray;"></p>
+        <p id="p2" style="background-color: dimgray;"></p>
+
 </div>
 <script>
     let btn = document.getElementById("btn")
@@ -33,9 +35,16 @@
         let x=Math.random();
         let random = Math.floor((x*99999+10000));
         let p = document.getElementById("p1")
+        let p2 = document.getElementById("p2")
         p.innerHTML=random;
         p.style.color="#ff335a";
         let div=document.getElementById("div1")
+        if(random%2==0){
+            p2.innerHTML="OTP is Even"
+        }
+        else{
+            p2.innerHTML="OTP is Odd"
+        }
         
     })
 </script>
